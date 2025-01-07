@@ -1,0 +1,90 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Cache files
+*.egg-info/
+.eggs/
+*.egg
+*.pyo
+*.pyd
+*.whl
+
+# Logs
+*.log
+*.out
+*.err
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage and test result files
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.tox/
+nosetests.xml
+test_results/
+
+# Build files
+build/
+dist/
+*.o
+*.obj
+
+# Package manager files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Mypy type-checker
+.mypy_cache/
+.dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# AWS and cloud credentials
+*.pem
+*.key
+*.crt
+
+# Secrets
+.env
+.env.*
+secrets.json
+
+# SQLite database
+*.sqlite3
+*.db
+
+# Supabase
+.supabase/
+
+# Ignore generated API clients
+api_client/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
