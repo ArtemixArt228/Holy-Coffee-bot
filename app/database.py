@@ -55,9 +55,8 @@ class Database:
                 )
                 .execute()
             )
-            return response.data
+            return response.data[0]["id"]
         except Exception as e:
-            print(f"Error reserving slot: {e}")
             return None
 
     # User details logic
@@ -68,14 +67,17 @@ class Database:
             ).eq("id", reservation_id).execute()
             return True
         except Exception as e:
-            print(f"Error updating user details: {e}")
             return None
 
     # Payment logic
-    def update_payment_status(self, reservation_id, status, payment_id):
+    def update_payment_status(self, reservation_id, status, payment_id, payment_method):
         """Update the payment status of a reservation."""
         self.client.table("reservations").update(
-            {"payment_status": status, "payment_id": payment_id}
+            {
+                "payment_status": status,
+                "payment_method": payment_method,
+                "payment_id": payment_id,
+            }
         ).eq("id", reservation_id).execute()
 
     # Fetch user reservations
@@ -85,7 +87,7 @@ class Database:
             self.client.table("reservations")
             .select("slot, date, created_at")
             .filter("user_id", "eq", user_id)
-            .filter("date", ">=", current_time.split(" ")[0])
+            .filter("date", "gte", current_time.split(" ")[0])
             .order("date")
             .execute()
         )

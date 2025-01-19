@@ -3,7 +3,6 @@ from telegram.ext import (
     CallbackQueryHandler,
     CommandHandler,
     MessageHandler,
-    PreCheckoutQueryHandler,
     filters,
 )
 
@@ -56,7 +55,6 @@ def main():
 
     setup_scheduler(app, db)
 
-    print("Bot is running...")
     app.run_polling()
 
 
